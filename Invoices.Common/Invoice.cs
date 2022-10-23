@@ -1,4 +1,4 @@
-﻿namespace DAL_EF_SQLite
+﻿namespace Invoices.Common
 {
     public class Invoice
     {

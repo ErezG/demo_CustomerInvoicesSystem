@@ -17,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DAL_EF-SQLite\DAL_EF_SQLite.csproj" />
+    <ProjectReference Include="..\Invoices.Common\Invoices.Common.csproj" />
+    <ProjectReference Include="..\InvoicesCRUD_BL\InvoicesCRUD_BL.csproj" />
   </ItemGroup>
 
 </Project>
