@@ -37,5 +37,13 @@ namespace DAL_EF_SQLite
             var retrievedItems = orderedInvoices.Skip((pageNum - 1) * pageSize).Take(pageSize).ToList();
             return retrievedItems;
         }
+
+        public static Invoice? GetInvoice(int id)
+        {
+            var invoicesTable = InvoicesContext.Instance.Invoices;
+
+            Invoice? invoice = invoicesTable.FirstOrDefault(item => item.InvoiceId == id);
+            return invoice;
+        }
     }
 }

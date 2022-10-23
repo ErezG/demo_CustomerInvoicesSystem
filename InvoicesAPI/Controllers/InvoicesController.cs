@@ -20,5 +20,11 @@ namespace InvoicesAPI.Controllers
         {
             return DataOperations.GetInvoicesPage(query);
         }
+
+        [HttpGet("{id:int}", Name = "GetInvoice")]
+        public Invoice? Get(int id)
+        {
+            return DataOperations.GetInvoice(id);
+        }
     }
 }

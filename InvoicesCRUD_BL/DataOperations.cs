@@ -17,5 +17,11 @@ namespace InvoicesCRUD_BL
             var invoicesPage = EFOperations.GetPage(filters, query.Sort, query.Paging.PageNum, query.Paging.PageSize);
             return invoicesPage;
         }
+
+        public static Invoice? GetInvoice(int invoiceId)
+        {
+            var invoice = EFOperations.GetInvoice(invoiceId);
+            return invoice;
+        }
     }
 }
