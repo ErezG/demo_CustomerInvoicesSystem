@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoicesAPI", "InvoicesAPI\InvoicesAPI.csproj", "{95D85277-E609-43CA-8F8B-10D1DACA2E2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_EF-CSV", "DAL_EF-CSV\DAL_EF-CSV.csproj", "{BDA04149-504F-4D92-B790-FE635B5628BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL_EF_SQLite", "DAL_EF-SQLite\DAL_EF_SQLite.csproj", "{BDA04149-504F-4D92-B790-FE635B5628BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
