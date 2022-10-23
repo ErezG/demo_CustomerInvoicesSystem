@@ -33,5 +33,12 @@ namespace InvoicesAPI.Controllers
         {
             return DataOperations.CreateNewInvoice(newItem);
         }
+
+        [HttpPut(Name = "UpdateInvoice")]
+        [Route("Update")]
+        public Invoice? UpdateInvoice(InvoiceUpdate ItemChanges)
+        {
+            return DataOperations.UpdateInvoice(ItemChanges);
+        }
     }
 }

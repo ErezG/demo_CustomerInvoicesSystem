@@ -36,5 +36,29 @@ namespace InvoicesCRUD_BL
             var invoice = EFOperations.AddNewInvoice(newInvoice);
             return invoice;
         }
+
+        public static Invoice? UpdateInvoice(InvoiceUpdate changes)
+        {
+            var existingInvoice = GetInvoice(changes.InvoiceId);
+            if (existingInvoice == null)
+            {
+                throw new KeyNotFoundException();
+            }
+
+            if (!changes.Status.HasValue || changes.Status == existingInvoice.Status &&
+                !changes.Amount.HasValue || changes.Amount == existingInvoice.Amount &&
+                !changes.Method.HasValue || changes.Method == existingInvoice.Method)
+            {
+                return null;
+            }
+            
+            existingInvoice.UpdatedOn = changes.UpdatedOn;
+            existingInvoice.Status = changes.Status ?? existingInvoice.Status;
+            existingInvoice.Amount = changes.Amount ?? existingInvoice.Amount;
+            existingInvoice.Method = changes.Method ?? existingInvoice.Method;
+
+            var invoice = EFOperations.UpdateInvoice(existingInvoice);
+            return invoice;
+        }
     }
 }
