@@ -28,7 +28,7 @@ namespace InvoicesAPI.Controllers
         }
 
         [HttpPut(Name = "CreateInvoice")]
-        //[Route("Create")]
+        [Route("Create")]
         public Invoice? CreateNewInvoice(InvoiceCreationModel newItem)
         {
             return DataOperations.CreateNewInvoice(newItem);
