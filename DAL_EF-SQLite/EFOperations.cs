@@ -45,5 +45,14 @@ namespace DAL_EF_SQLite
             Invoice? invoice = invoicesTable.FirstOrDefault(item => item.InvoiceId == id);
             return invoice;
         }
+
+        public static Invoice? AddNewInvoice(Invoice newItem)
+        {
+            var invoicesTable = InvoicesContext.Instance.Invoices;
+
+            var createdEntity = invoicesTable.Add(newItem);
+            InvoicesContext.Instance.SaveChanges();
+            return createdEntity.Entity.InvoiceId > 0 ? createdEntity.Entity : null;
+        }
     }
 }

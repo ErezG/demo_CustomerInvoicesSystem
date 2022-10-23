@@ -23,5 +23,18 @@ namespace InvoicesCRUD_BL
             var invoice = EFOperations.GetInvoice(invoiceId);
             return invoice;
         }
+
+        public static Invoice? CreateNewInvoice(InvoiceCreationModel data)
+        {
+            var newInvoice = new Invoice()
+            {
+                CreatedOn = data.CreatedOn,
+                Status = data.Status,
+                Amount = data.Amount,
+                Method = data.Method
+            };
+            var invoice = EFOperations.AddNewInvoice(newInvoice);
+            return invoice;
+        }
     }
 }

@@ -7,7 +7,6 @@
         public int InvoiceId { get; set; }
         public ProcessingStatuses Status { get; set; }
         public double Amount { get; set; }
-
         public PaymentMethods Method { get; set; }
     }
 

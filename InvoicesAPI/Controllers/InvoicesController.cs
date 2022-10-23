@@ -16,15 +16,22 @@ namespace InvoicesAPI.Controllers
         }
 
         [HttpPost(Name = "GetInvoices")]
-        public IEnumerable<Invoice> Get(QueryModel query)
+        public IEnumerable<Invoice> GetPage(QueryModel query)
         {
             return DataOperations.GetInvoicesPage(query);
         }
 
         [HttpGet("{id:int}", Name = "GetInvoice")]
-        public Invoice? Get(int id)
+        public Invoice? GetInvoice(int id)
         {
             return DataOperations.GetInvoice(id);
+        }
+
+        [HttpPut(Name = "CreateInvoice")]
+        //[Route("Create")]
+        public Invoice? CreateNewInvoice(InvoiceCreationModel newItem)
+        {
+            return DataOperations.CreateNewInvoice(newItem);
         }
     }
 }
