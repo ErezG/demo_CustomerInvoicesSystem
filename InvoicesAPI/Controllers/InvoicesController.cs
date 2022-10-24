@@ -27,15 +27,13 @@ namespace InvoicesAPI.Controllers
             return DataOperations.GetInvoice(id);
         }
 
-        [HttpPut(Name = "CreateInvoice")]
-        [Route("Create")]
+        [HttpPut("Create", Name = "CreateInvoice")]
         public Invoice? CreateNewInvoice(InvoiceCreationModel newItem)
         {
             return DataOperations.CreateNewInvoice(newItem);
         }
 
-        [HttpPut(Name = "UpdateInvoice")]
-        [Route("Update")]
+        [HttpPut("Update", Name = "UpdateInvoice")]
         public Invoice? UpdateInvoice(InvoiceUpdate ItemChanges)
         {
             return DataOperations.UpdateInvoice(ItemChanges);
